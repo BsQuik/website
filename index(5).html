@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">BsQuik — Gaming & Web Dev</title>
+<meta id="metaDescription" name="description" content="Creatore di contenuti gaming (Brawl Stars, Minecraft) e sviluppatore web. Progetti, API, minigiochi.">
+
+<!-- ============ SEO di base ============
+     Sostituisci SITE_URL con il dominio reale una volta pubblicato:
+     serve a canonical, Open Graph e Twitter Card qui sotto. -->
+<meta name="keywords" content="BsQuik, ttm Pizzaa, Brawl Stars, Minecraft, content creator, sviluppo web, portfolio">
+<meta name="author" content="BsQuik">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#14111F">
+<link rel="canonical" href="https://SITE_URL/">
+
+<!-- ============ Open Graph (anteprime su Discord, WhatsApp, Facebook...) ============ -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BsQuik">
+<meta id="ogTitle" property="og:title" content="BsQuik — Gaming & Web Dev">
+<meta id="ogDescription" property="og:description" content="Creatore di contenuti gaming (Brawl Stars, Minecraft) e sviluppatore web. Progetti, API, minigiochi.">
+<meta property="og:image" content="https://SITE_URL/assets/og-cover.png">
+<meta property="og:url" content="https://SITE_URL/">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- ============ Twitter / X Card ============ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta id="twitterTitle" name="twitter:title" content="BsQuik — Gaming & Web Dev">
+<meta id="twitterDescription" name="twitter:description" content="Creatore di contenuti gaming (Brawl Stars, Minecraft) e sviluppatore web. Progetti, API, minigiochi.">
+<meta name="twitter:image" content="https://SITE_URL/assets/og-cover.png">
+
+<!-- ============ Favicon ============ -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="assets/favicon.svg">
+
+<!-- Font: Space Grotesk (titoli/corpo) + IBM Plex Mono (dati/codice) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============ Dati strutturati (Person) — aiuta i risultati di ricerca ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "BsQuik",
+  "alternateName": "ttm | Pizzaa",
+  "description": "Creatore di contenuti gaming (Brawl Stars, Minecraft) e sviluppatore web.",
+  "sameAs": [
+    "https://www.youtube.com/@BsQuik",
+    "https://www.youtube.com/@ttmPizzaa"
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-header">
+  <nav class="nav container">
+    <a href="#home" class="nav__brand">BsQuik<span class="dot">.</span></a>
+
+    <div class="nav__controls">
+      <!-- Toggle lingua: IT/EN, gestito da js/i18n.js -->
+      <button id="langToggle" class="nav__pill" type="button" aria-label="Cambia lingua / Switch language">
+        <span data-lang-label="it" class="is-active">IT</span><span class="nav__pill-sep">/</span><span data-lang-label="en">EN</span>
+      </button>
+      <!-- Toggle tema chiaro/scuro, gestito da js/theme.js -->
+      <button id="themeToggle" class="nav__icon-btn" type="button" aria-label="Attiva tema chiaro" aria-pressed="false">
+        <span class="theme-icon theme-icon--moon" aria-hidden="true">☾</span>
+        <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+      </button>
+      <button class="nav__toggle" id="navToggle" aria-label="Apri il menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about" data-i18n="nav.about">Chi sono</a></li>
+      <li><a href="#stack" data-i18n="nav.stack">Stack</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Progetti</a></li>
+      <li><a href="#games" data-i18n="nav.games">Minigiochi</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero container">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <p class="hero__eyebrow" data-i18n="hero.eyebrow">creator · developer</p>
+    <h1 class="hero__title">
+      <span id="heroTyped"></span><span class="cursor" aria-hidden="true">▌</span>
+    </h1>
+    <p class="hero__lead" data-i18n="hero.lead">
+      Faccio video su Brawl Stars, Clash Royale e Minecraft — e quando spengo la camera
+      costruisco siti, bot e piccoli strumenti che vivono di API vere.
+    </p>
+    <div class="hero__cta">
+      <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">Guarda i progetti</a>
+      <a href="#games" class="btn btn--ghost" data-i18n="hero.ctaGames">Gioca ora</a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section container">
+    <div class="section__head">
+      <h2 data-i18n="about.title">Chi sono</h2>
+      <span class="section__index">01</span>
+    </div>
+    <div class="about__grid">
+      <div class="about__text">
+        <p data-i18n="about.p1">
+          Mi chiamo <strong>BsQuik</strong> (in giro anche come <strong>ttm | Pizzaa</strong>).
+          Creo contenuti gaming incentrati sull'universo Supercell — soprattutto Brawl Stars —
+          e su Minecraft: gameplay, build, sfide e tutto quello che rende un match raccontabile.
+        </p>
+        <p data-i18n="about.p2">
+          In parallelo studio e costruisco progetti web: dashboard che parlano con API reali,
+          piccole web app, automazioni. Mi interessa il punto dove gaming e codice si incontrano —
+          contatori live, bot per server, strumenti che i creator come me userebbero davvero.
+        </p>
+      </div>
+      <div class="about__card">
+        <p class="about__card-label" data-i18n="about.cardLabel">Focus attuale</p>
+        <ul class="about__card-list">
+          <li data-i18n="about.card1">Contenuti Brawl Stars & Minecraft</li>
+          <li data-i18n="about.card2">Integrazioni API (Supercell, YouTube)</li>
+          <li data-i18n="about.card3">Web app leggere, senza framework pesanti</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TECH STACK ============ -->
+  <section id="stack" class="section container">
+    <div class="section__head">
+      <h2 data-i18n="stack.title">Stack & strumenti</h2>
+      <span class="section__index">02</span>
+    </div>
+    <p class="section__sub" data-i18n="stack.sub">Quello che uso davvero, ordinato per come lo uso io — non per hype.</p>
+
+    <div class="stack-grid" id="stackGrid">
+      <!-- popolata anche via JS, markup statico come fallback/no-js -->
+      <div class="stack-item" data-tag="frontend">
+        <span class="stack-item__glyph">&lt;/&gt;</span>
+        <span class="stack-item__name">HTML / CSS / JS</span>
+        <span class="stack-item__tag" data-i18n="stack.tag.frontend">frontend</span>
+      </div>
+      <div class="stack-item" data-tag="backend">
+        <span class="stack-item__glyph">$php</span>
+        <span class="stack-item__name">PHP</span>
+        <span class="stack-item__tag" data-i18n="stack.tag.backend">backend</span>
+      </div>
+      <div class="stack-item" data-tag="api">
+        <span class="stack-item__glyph">↔</span>
+        <span class="stack-item__name">cURL / REST API</span>
+        <span class="stack-item__tag" data-i18n="stack.tag.api">integrazioni</span>
+      </div>
+      <div class="stack-item" data-tag="sistema">
+        <span class="stack-item__glyph">~$</span>
+        <span class="stack-item__name">Linux</span>
+        <span class="stack-item__tag" data-i18n="stack.tag.sistema">sistema</span>
+      </div>
+      <div class="stack-item" data-tag="workflow">
+        <span class="stack-item__glyph">⎇</span>
+        <span class="stack-item__name">Git / GitHub</span>
+        <span class="stack-item__tag" data-i18n="stack.tag.workflow">versionamento</span>
+      </div>
+      <div class="stack-item" data-tag="editing">
+        <span class="stack-item__glyph">▶</span>
+        <span class="stack-item__name">CapCut</span>
+        <span class="stack-item__tag" data-i18n="stack.tag.editing">editing video</span>
+      </div>
+      <div class="stack-item" data-tag="creative">
+        <span class="stack-item__glyph">✎</span>
+        <span class="stack-item__name">Wacom</span>
+        <span class="stack-item__tag" data-i18n="stack.tag.creative">tavoletta grafica</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROGETTI ============ -->
+  <section id="projects" class="section container">
+    <div class="section__head">
+      <h2 data-i18n="projects.title">Progetti</h2>
+      <span class="section__index">03</span>
+    </div>
+    <p class="section__sub" data-i18n="projects.sub">Progetti web costruiti attorno a dati veri, non mockup statici.</p>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="project-card__top">
+          <span class="project-card__label">Brawl Stars API</span>
+          <span class="project-card__status" data-i18n="projects.statusLive">live</span>
+        </div>
+        <h3 data-i18n="projects.p1Title">Club & Player Tracker</h3>
+        <p data-i18n="projects.p1Text">
+          Web app che interroga l'API ufficiale Brawl Stars (via proxy PHP per non esporre la chiave)
+          e mostra trofei, brawler e statistiche del club in tempo reale.
+        </p>
+        <div class="project-card__tags">
+          <span>PHP</span><span>cURL</span><span>JSON</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__top">
+          <span class="project-card__label">YouTube Data API</span>
+          <span class="project-card__status" data-i18n="projects.statusLive">live</span>
+        </div>
+        <h3 data-i18n="projects.p2Title">Contatore iscritti dinamico</h3>
+        <p data-i18n="projects.p2Text">
+          Widget che legge le statistiche pubbliche dei canali @BsQuik e @ttm|Pizzaa e aggiorna
+          il contatore sul sito senza ricaricare la pagina.
+        </p>
+        <div class="project-card__tags">
+          <span>JavaScript</span><span>Fetch API</span><span>PHP</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__top">
+          <span class="project-card__label" data-i18n="projects.p3Label">Web app</span>
+          <span class="project-card__status" data-i18n="projects.statusProgress">in corso</span>
+        </div>
+        <h3 data-i18n="projects.p3Title">Questo sito</h3>
+        <p data-i18n="projects.p3Text">
+          Portfolio personale con minigiochi in Canvas/JS puro e un pannello segreto —
+          niente framework, solo HTML, CSS e JavaScript vanilla.
+        </p>
+        <div class="project-card__tags">
+          <span>Vanilla JS</span><span>CSS</span><span>Canvas</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ MINIGIOCHI ============ -->
+  <section id="games" class="section container">
+    <div class="section__head">
+      <h2 data-i18n="games.title">Minigiochi</h2>
+      <span class="section__index">04</span>
+    </div>
+    <p class="section__sub" data-i18n="games.sub">Due pause veloci mentre esplori il sito. Punteggio salvato solo in questa sessione.</p>
+
+    <div class="games-grid">
+
+      <!-- MINIGIOCO 1: Reaction Clicker -->
+      <div class="game-panel">
+        <div class="game-panel__head">
+          <h3>Gem Rush</h3>
+          <p data-i18n="games.gr.desc">Colpisci le gemme prima che spariscano. 20 secondi, ogni colpo conta.</p>
+        </div>
+        <div class="game-panel__stats">
+          <div><span class="game-panel__stat-label" data-i18n="games.gr.score">Punteggio</span><span id="grScore" class="game-panel__stat-value">0</span></div>
+          <div><span class="game-panel__stat-label" data-i18n="games.gr.time">Tempo</span><span id="grTime" class="game-panel__stat-value">20</span></div>
+          <div><span class="game-panel__stat-label" data-i18n="games.gr.best">Record</span><span id="grBest" class="game-panel__stat-value">0</span></div>
+        </div>
+        <canvas id="gemCanvas" width="480" height="300" class="game-canvas"></canvas>
+        <div class="game-panel__controls">
+          <button id="grStart" class="btn btn--primary btn--small" data-i18n="games.start">Avvia</button>
+          <p id="grMessage" class="game-panel__message" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <!-- MINIGIOCO 2: Trivia -->
+      <div class="game-panel">
+        <div class="game-panel__head">
+          <h3>Tech & Arena Quiz</h3>
+          <p data-i18n="games.qz.desc">10 domande tra sviluppo web e mondo gaming. Una risposta giusta vale un punto.</p>
+        </div>
+        <div class="game-panel__stats">
+          <div><span class="game-panel__stat-label" data-i18n="games.qz.question">Domanda</span><span id="qzIndex" class="game-panel__stat-value">0/10</span></div>
+          <div><span class="game-panel__stat-label" data-i18n="games.gr.score">Punteggio</span><span id="qzScore" class="game-panel__stat-value">0</span></div>
+        </div>
+        <div id="quizBody" class="quiz-body">
+          <p class="quiz-intro" data-i18n="games.qz.intro">Premi "Avvia" per iniziare il quiz.</p>
+        </div>
+        <div class="game-panel__controls">
+          <button id="qzStart" class="btn btn--primary btn--small" data-i18n="games.start">Avvia</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ SOCIAL / CONTATTI ============ -->
+  <section id="contact" class="section container">
+    <div class="section__head">
+      <h2 data-i18n="contact.title">Trovami altrove</h2>
+      <span class="section__index">05</span>
+    </div>
+
+    <div class="social-grid">
+      <a class="social-card" href="https://www.youtube.com/@BsQuik" target="_blank" rel="noopener">
+        <span class="social-card__platform">YouTube</span>
+        <span class="social-card__handle">@BsQuik</span>
+        <span class="social-card__sub" id="ytSubsBsQuik" data-i18n="contact.bsquikSub">contenuti Brawl Stars</span>
+      </a>
+      <a class="social-card" href="https://www.youtube.com/@ttmPizzaa" target="_blank" rel="noopener">
+        <span class="social-card__platform">YouTube</span>
+        <span class="social-card__handle">ttm | Pizzaa</span>
+        <span class="social-card__sub" id="ytSubsPizzaa" data-i18n="contact.pizzaaSub">contenuti Minecraft</span>
+      </a>
+      <a class="social-card" href="https://github.com/" target="_blank" rel="noopener">
+        <span class="social-card__platform">GitHub</span>
+        <span class="social-card__handle" data-i18n="contact.githubHandle">i miei repo</span>
+        <span class="social-card__sub" data-i18n="contact.githubSub">codice dei progetti</span>
+      </a>
+      <a class="social-card" href="mailto:contatto@example.com">
+        <span class="social-card__platform">Email</span>
+        <span class="social-card__handle" data-i18n="contact.emailHandle">Scrivimi</span>
+        <span class="social-card__sub" data-i18n="contact.emailSub">collaborazioni & domande</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p><span data-i18n="footer.made">Fatto a mano, senza framework.</span> <span id="year"></span></p>
+    <!-- Bottone discreto per il pannello segreto: nessuna icona vistosa, si nota solo se lo cerchi -->
+    <button id="secretTrigger" class="secret-trigger" aria-label="?">·</button>
+  </div>
+</footer>
+
+<!-- ============ MODAL EASTER EGG ============ -->
+<div id="secretModal" class="secret-modal" hidden>
+  <div class="secret-modal__box" role="dialog" aria-modal="true" aria-labelledby="secretTitle">
+    <button id="secretClose" class="secret-modal__close" aria-label="Chiudi">✕</button>
+    <p id="secretTitle" class="secret-modal__title" data-i18n="modal.title">Accesso riservato</p>
+    <p class="secret-modal__hint" data-i18n="modal.hint">Hai trovato il pannello nascosto. Serve una password.</p>
+    <form id="secretForm" class="secret-modal__form">
+      <input type="password" id="secretInput" class="secret-modal__input" placeholder="password" autocomplete="off">
+      <button type="submit" class="btn btn--primary btn--small" data-i18n="modal.enter">Entra</button>
+    </form>
+    <p id="secretError" class="secret-modal__error" aria-live="polite"></p>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="theme.js"></script>
+<script src="main.js"></script>
+<script src="games.js"></script>
+<script src="easter-egg.js"></script>
+</body>
+</html>
