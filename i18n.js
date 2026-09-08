@@ -28,12 +28,12 @@
       'hero.ctaGames': 'Gioca ora',
 
       'about.title': 'Chi sono',
-      'about.p1': 'Mi chiamo <strong>BsQuik</strong> (in giro anche come <strong>ttm | Pizzaa</strong>). Creo contenuti gaming incentrati sull\'universo Supercell — soprattutto Brawl Stars — e su Minecraft: gameplay, build, sfide e tutto quello che rende un match raccontabile.',
+      'about.p1': 'Mi chiamo <strong>BsQuik</strong> (in giro anche come <strong>Quik</strong>). Creo contenuti gaming incentrati sull\'universo Supercell — soprattutto Brawl Stars — e su Minecraft: gameplay, build, sfide e tutto quello che rende un match raccontabile.',
       'about.p2': 'In parallelo studio e costruisco progetti web: dashboard che parlano con API reali, piccole web app, automazioni. Mi interessa il punto dove gaming e codice si incontrano — contatori live, bot per server, strumenti che i creator come me userebbero davvero.',
       'about.cardLabel': 'Focus attuale',
       'about.card1': 'Contenuti Brawl Stars & Minecraft',
       'about.card2': 'Integrazioni API (Supercell, YouTube)',
-      'about.card3': 'Web app leggere, senza framework pesanti',
+      'about.card3': 'Diventare a trusted content creator',
 
       'stack.title': 'Stack & strumenti',
       'stack.sub': 'Quello che uso davvero, ordinato per come lo uso io — non per hype.',
