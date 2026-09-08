@@ -250,7 +250,7 @@
       <h2 data-i18n="games.title">Minigiochi</h2>
       <span class="section__index">04</span>
     </div>
-    <p class="section__sub" data-i18n="games.sub">Due pause veloci mentre esplori il sito. Punteggio salvato solo in questa sessione.</p>
+    <p class="section__sub" data-i18n="games.sub">Qualche pausa veloce mentre esplori il sito. Punteggi salvati solo in questo browser. Ce n'è anche uno nascosto, se sai dove cercare.</p>
 
     <div class="games-grid">
 
@@ -287,6 +287,45 @@
         </div>
         <div class="game-panel__controls">
           <button id="qzStart" class="btn btn--primary btn--small" data-i18n="games.start">Avvia</button>
+        </div>
+      </div>
+
+      <!-- MINIGIOCO 3: Block Match (memoria a sequenza) -->
+      <div class="game-panel">
+        <div class="game-panel__head">
+          <h3>Block Match</h3>
+          <p data-i18n="games.bm.desc">Guarda la sequenza di blocchi e ripetila cliccando nello stesso ordine. Un errore e si riparte da zero.</p>
+        </div>
+        <div class="game-panel__stats">
+          <div><span class="game-panel__stat-label" data-i18n="games.gr.score">Punteggio</span><span id="bmScore" class="game-panel__stat-value">0</span></div>
+          <div><span class="game-panel__stat-label" data-i18n="games.gr.best">Record</span><span id="bmBest" class="game-panel__stat-value">0</span></div>
+        </div>
+        <div class="block-match" id="blockMatch" aria-label="Block Match">
+          <button type="button" class="block-match__cell" data-cell="0"></button>
+          <button type="button" class="block-match__cell" data-cell="1"></button>
+          <button type="button" class="block-match__cell" data-cell="2"></button>
+          <button type="button" class="block-match__cell" data-cell="3"></button>
+        </div>
+        <div class="game-panel__controls">
+          <button id="bmStart" class="btn btn--primary btn--small" data-i18n="games.start">Avvia</button>
+          <p id="bmMessage" class="game-panel__message" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <!-- MINIGIOCO BONUS (nascosto): sbloccato cliccando 5 volte il logo in nav,
+           oppure sblocca il tema segreto: vedi js/easter-egg.js -->
+      <div class="game-panel game-panel--bonus" id="bonusGamePanel" hidden>
+        <div class="game-panel__head">
+          <h3 data-i18n="games.rx.title">Bonus: prova di riflessi</h3>
+          <p data-i18n="games.rx.desc">Clicca l'area appena diventa verde. Misuriamo il tuo tempo di reazione in millisecondi.</p>
+        </div>
+        <div class="game-panel__stats">
+          <div><span class="game-panel__stat-label" data-i18n="games.rx.last">Ultimo</span><span id="rxLast" class="game-panel__stat-value">—</span></div>
+          <div><span class="game-panel__stat-label" data-i18n="games.gr.best">Record</span><span id="rxBest" class="game-panel__stat-value">—</span></div>
+        </div>
+        <button type="button" id="rxPad" class="reflex-pad" data-i18n="games.rx.idle">Premi "Avvia" per iniziare</button>
+        <div class="game-panel__controls">
+          <button id="rxStart" class="btn btn--primary btn--small" data-i18n="games.start">Avvia</button>
         </div>
       </div>
 
