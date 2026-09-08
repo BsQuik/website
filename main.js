@@ -31,17 +31,22 @@
 
   /* ---------- Effetto typing nel titolo hero ---------- */
   // Unico "momento animato" orchestrato della pagina: si esegue una sola
-  // volta al caricamento, poi il cursore continua a lampeggiare via CSS.
+  // volta al caricamento (e viene ridisegnato se l'utente cambia lingua),
+  // poi il cursore continua a lampeggiare via CSS.
   var heroTyped = document.getElementById('heroTyped');
-  var HERO_TEXT = 'Gioco. Registro. Costruisco.';
+
+  function getHeroText() {
+    return (window.t ? window.t('heroTyped') : null) || 'Gioco. Registro. Costruisco.';
+  }
 
   function typeHeroTitle() {
     if (!heroTyped) return;
+    var text = getHeroText();
 
     // Rispetta la preferenza di riduzione del movimento: mostra il testo intero
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
-      heroTyped.textContent = HERO_TEXT;
+      heroTyped.textContent = text;
       return;
     }
 
@@ -49,8 +54,8 @@
     var speed = 42; // ms per carattere
 
     (function typeNext() {
-      if (i <= HERO_TEXT.length) {
-        heroTyped.textContent = HERO_TEXT.slice(0, i);
+      if (i <= text.length) {
+        heroTyped.textContent = text.slice(0, i);
         i++;
         setTimeout(typeNext, speed);
       }
@@ -58,10 +63,16 @@
   }
   typeHeroTitle();
 
+  // Se l'utente cambia lingua dopo il caricamento, riscrive il titolo
+  // nella nuova lingua (senza ripetere l'animazione carattere per carattere).
+  document.addEventListener('languagechange', function () {
+    if (heroTyped) heroTyped.textContent = getHeroText();
+  });
+
   /* ---------- Contatori YouTube (YouTube Data API) ----------
      In locale/senza backend questa chiamata fallirà silenziosamente
-     e il testo di fallback nell'HTML resterà visibile: è previsto.
-     Vedi php/youtube_stats.php per il proxy lato server. */
+     e il testo di fallback (tradotto da i18n.js) resterà visibile:
+     è previsto. Vedi php/youtube_stats.php per il proxy lato server. */
   function loadYouTubeStats() {
     var targets = [
       { id: 'ytSubsBsQuik', channel: 'BsQuik' },
@@ -80,6 +91,9 @@
         .then(function (data) {
           if (data && typeof data.subscriberCount !== 'undefined') {
             el.textContent = formatCount(data.subscriberCount) + ' iscritti';
+            // Marca l'elemento come "dato live": da qui in poi i18n.js
+            // non lo sovrascrive più al cambio lingua.
+            el.dataset.live = '1';
           }
         })
         .catch(function () {
