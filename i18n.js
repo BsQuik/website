@@ -183,7 +183,8 @@
       bonusUnlocked: 'Hai sbloccato un minigioco bonus!',
       minecraftToast: 'Achievement get: Blocco di Diamante 💎',
       brawlToast: 'Super attivata! ⭐',
-      ggToast: 'GG! 🏆'
+      ggToast: 'GG! 🏆',
+      hiToast:'Ciao!' 
     },
     en: {
       heroTyped: 'I play. I record. I build.',
@@ -204,7 +205,8 @@
       bonusUnlocked: 'You unlocked a bonus mini-game!',
       minecraftToast: 'Achievement get: Diamond Block 💎',
       brawlToast: 'Super activated! ⭐',
-      ggToast: 'GG! 🏆'
+      ggToast: 'GG! 🏆',
+      hiToast:'HI!' 
     }
   };
 
