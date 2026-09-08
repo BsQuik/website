@@ -236,8 +236,8 @@
   var SECRET_WORDS = [
     { word: 'minecraft', run: function () { spawnBlockRain(); showToast(window.t ? window.t('minecraftToast') : 'Achievement get: Blocco di Diamante 💎'); } },
     { word: 'brawl', run: function () { spawnConfetti(); showToast(window.t ? window.t('brawlToast') : 'Super attivata! ⭐'); } },
-    { word: 'gg', run: function () { showToast(window.t ? window.t('ggToast') : 'GG! 🏆'); } }
-    { word: 'hi', run: function () { showToast(window.t ? window.t('ggToast') : 'hi! 🏆'); } }
+    { word: 'gg', run: function () { showToast(window.t ? window.t('ggToast') : 'GG! 🏆'); } },
+    { word: 'hi', run: function () { showToast(window.t ? window.t('hiToast') : 'hi! 🏆'); } }
   ];
   var typedBuffer = '';
   var TYPED_BUFFER_MAX = 20;
