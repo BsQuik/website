@@ -58,7 +58,7 @@
       'projects.p3Text': 'Portfolio personale con minigiochi in Canvas/JS puro e un pannello segreto — niente framework, solo HTML, CSS e JavaScript vanilla.',
 
       'games.title': 'Minigiochi',
-      'games.sub': 'Due pause veloci mentre esplori il sito. Punteggio salvato solo in questa sessione.',
+      'games.sub': 'Qualche pausa veloce mentre esplori il sito. Punteggi salvati solo in questo browser. Ce n\'è anche uno nascosto, se sai dove cercare.',
       'games.start': 'Avvia',
       'games.gr.desc': 'Colpisci le gemme prima che spariscano. 20 secondi, ogni colpo conta.',
       'games.gr.score': 'Punteggio',
@@ -67,6 +67,11 @@
       'games.qz.desc': '10 domande tra sviluppo web e mondo gaming. Una risposta giusta vale un punto.',
       'games.qz.question': 'Domanda',
       'games.qz.intro': 'Premi "Avvia" per iniziare il quiz.',
+      'games.bm.desc': 'Guarda la sequenza di blocchi e ripetila cliccando nello stesso ordine. Un errore e si riparte da zero.',
+      'games.rx.title': 'Bonus: prova di riflessi',
+      'games.rx.desc': 'Clicca l\'area appena diventa verde. Misuriamo il tuo tempo di reazione in millisecondi.',
+      'games.rx.last': 'Ultimo',
+      'games.rx.idle': 'Premi "Avvia" per iniziare',
 
       'contact.title': 'Trovami altrove',
       'contact.bsquikSub': 'contenuti Brawl Stars',
@@ -126,7 +131,7 @@
       'projects.p3Text': 'Personal portfolio with mini-games in pure Canvas/JS and a secret panel — no frameworks, just vanilla HTML, CSS and JavaScript.',
 
       'games.title': 'Mini-games',
-      'games.sub': 'Two quick breaks while you explore the site. Score is only kept for this session.',
+      'games.sub': 'A few quick breaks while you explore the site. Scores are saved only in this browser. There\'s a hidden one too, if you know where to look.',
       'games.start': 'Start',
       'games.gr.desc': 'Hit the gems before they disappear. 20 seconds, every hit counts.',
       'games.gr.score': 'Score',
@@ -135,6 +140,11 @@
       'games.qz.desc': '10 questions mixing web development and gaming culture. One point per correct answer.',
       'games.qz.question': 'Question',
       'games.qz.intro': 'Press "Start" to begin the quiz.',
+      'games.bm.desc': 'Watch the block sequence and repeat it by clicking in the same order. One mistake and you start over.',
+      'games.rx.title': 'Bonus: reflex test',
+      'games.rx.desc': 'Click the area as soon as it turns green. We measure your reaction time in milliseconds.',
+      'games.rx.last': 'Last',
+      'games.rx.idle': 'Press "Start" to begin',
 
       'contact.title': 'Find me elsewhere',
       'contact.bsquikSub': 'Brawl Stars content',
@@ -162,7 +172,18 @@
       wrongPassword: 'Password errata. Riprova.',
       unlockedBanner: 'Easter egg sbloccato: benvenuto nella modalità Hacker.',
       pageTitle: 'BsQuik — Gaming & Web Dev',
-      metaDescription: 'Creatore di contenuti gaming (Brawl Stars, Minecraft) e sviluppatore web. Progetti, API, minigiochi.'
+      metaDescription: 'Creatore di contenuti gaming (Brawl Stars, Minecraft) e sviluppatore web. Progetti, API, minigiochi.',
+      bmWatch: 'Guarda bene...',
+      bmYourTurn: 'Tocca a te.',
+      bmFinished: 'Sequenza sbagliata — punteggio: ',
+      rxWait: 'Aspetta...',
+      rxReady: 'Clicca ora!',
+      rxEarly: 'Troppo presto! Riprova.',
+      rxIdle: 'Premi "Avvia" per iniziare',
+      bonusUnlocked: 'Hai sbloccato un minigioco bonus!',
+      minecraftToast: 'Achievement get: Blocco di Diamante 💎',
+      brawlToast: 'Super attivata! ⭐',
+      ggToast: 'GG! 🏆'
     },
     en: {
       heroTyped: 'I play. I record. I build.',
@@ -172,7 +193,18 @@
       wrongPassword: 'Wrong password. Try again.',
       unlockedBanner: 'Easter egg unlocked: welcome to Hacker mode.',
       pageTitle: 'BsQuik — Gaming & Web Dev',
-      metaDescription: 'Gaming content creator (Brawl Stars, Minecraft) and web developer. Projects, APIs, mini-games.'
+      metaDescription: 'Gaming content creator (Brawl Stars, Minecraft) and web developer. Projects, APIs, mini-games.',
+      bmWatch: 'Watch closely...',
+      bmYourTurn: 'Your turn.',
+      bmFinished: 'Wrong sequence — score: ',
+      rxWait: 'Wait...',
+      rxReady: 'Click now!',
+      rxEarly: 'Too early! Try again.',
+      rxIdle: 'Press "Start" to begin',
+      bonusUnlocked: 'You unlocked a bonus mini-game!',
+      minecraftToast: 'Achievement get: Diamond Block 💎',
+      brawlToast: 'Super activated! ⭐',
+      ggToast: 'GG! 🏆'
     }
   };
 
