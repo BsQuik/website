@@ -9,7 +9,7 @@
 <!-- ============ SEO di base ============
      Sostituisci SITE_URL con il dominio reale una volta pubblicato:
      serve a canonical, Open Graph e Twitter Card qui sotto. -->
-<meta name="keywords" content="BsQuik, Brawl Stars, Minecraft, content creator, sviluppo web, portfolio">
+<meta name="keywords" content="BsQuik, ttm Pizzaa, Brawl Stars, Minecraft, content creator, sviluppo web, portfolio">
 <meta name="author" content="BsQuik">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#14111F">
@@ -32,13 +32,13 @@
 <meta name="twitter:image" content="https://SITE_URL/assets/og-cover.png">
 
 <!-- ============ Favicon ============ -->
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="alternate icon" href="assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.svg">
 
 <!-- Font: Space Grotesk (titoli/corpo) + IBM Plex Mono (dati/codice) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Karla:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 
 <!-- ============ Dati strutturati (Person) — aiuta i risultati di ricerca ============ -->
 <script type="application/ld+json">
@@ -46,11 +46,11 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "BsQuik",
-  "alternateName": "Quik",
+  "alternateName": "Quik the command one",
   "description": "Creatore di contenuti gaming (Brawl Stars, Minecraft) e sviluppatore web.",
   "sameAs": [
     "https://www.youtube.com/@BsQuik",
-    "www.youtube.com/@Quikcommandboy"
+    "https://www.youtube.com/@Quikcommandboy"
   ]
 }
 </script>
@@ -65,14 +65,13 @@
     <a href="#home" class="nav__brand">BsQuik<span class="dot">.</span></a>
 
     <div class="nav__controls">
-      <!-- Toggle lingua: IT/EN, gestito da js/i18n.js -->
+      <!-- Toggle lingua: IT/EN, gestito da i18n.js -->
       <button id="langToggle" class="nav__pill" type="button" aria-label="Cambia lingua / Switch language">
         <span data-lang-label="it" class="is-active">IT</span><span class="nav__pill-sep">/</span><span data-lang-label="en">EN</span>
       </button>
-      <!-- Toggle tema chiaro/scuro, gestito da js/theme.js -->
-      <button id="themeToggle" class="nav__icon-btn" type="button" aria-label="Attiva tema chiaro" aria-pressed="false">
-        <span class="theme-icon theme-icon--moon" aria-hidden="true">☾</span>
-        <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+      <!-- Toggle notte/giorno, gestito da theme.js. Default: notte. -->
+      <button id="themeToggle" class="nav__pill" type="button" aria-label="Passa alla modalità giorno">
+        <span data-theme-label="dark" class="is-active" data-i18n="theme.night">🌙 Notte</span><span class="nav__pill-sep">/</span><span data-theme-label="light" data-i18n="theme.day">☀ Giorno</span>
       </button>
       <button class="nav__toggle" id="navToggle" aria-label="Apri il menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -93,14 +92,13 @@
 
   <!-- ============ HERO ============ -->
   <section id="home" class="hero container">
-    <div class="hero__grid" aria-hidden="true"></div>
-    <p class="hero__eyebrow" data-i18n="hero.eyebrow">creator · developer</p>
+    <div class="hero__texture" aria-hidden="true"></div>
     <h1 class="hero__title">
-      <span id="heroTyped"></span><span class="cursor" aria-hidden="true">▌</span>
+      <span id="heroTyped"></span>
     </h1>
     <p class="hero__lead" data-i18n="hero.lead">
       Faccio video su Brawl Stars, Clash Royale e Minecraft — e quando spengo la camera
-      costruisco siti, bot e piccoli strumenti che vivono di API vere.
+      costruisco siti, bot minigame che usano API.
     </p>
     <div class="hero__cta">
       <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">Guarda i progetti</a>
@@ -112,17 +110,16 @@
   <section id="about" class="section container">
     <div class="section__head">
       <h2 data-i18n="about.title">Chi sono</h2>
-      <span class="section__index">01</span>
     </div>
     <div class="about__grid">
       <div class="about__text">
         <p data-i18n="about.p1">
-          Mi chiamo <strong>BsQuik</strong> (in giro anche come <strong>Quik</strong>).
+          Mi chiamo <strong>BsQuik</strong> (in giro anche come <strong>Quik the command one</strong>).
           Creo contenuti gaming incentrati sull'universo Supercell — soprattutto Brawl Stars —
-          e gioco a Minecraft: gameplay, build, sfide e tutto quello che rende un match raccontabile.
+          e of camera gioco a Minecraft. 
         </p>
         <p data-i18n="about.p2">
-          In parallelo studio e costruisco progetti web: dashboard che usano API ,
+          In parallelo studio e costruisco progetti web: dashboard che uano API ufficiali,
           piccole web app, automazioni. Mi interessa il punto dove gaming e codice si incontrano —
           contatori live, bot per server, strumenti che i creator come me userebbero davvero.
         </p>
@@ -130,9 +127,9 @@
       <div class="about__card">
         <p class="about__card-label" data-i18n="about.cardLabel">Focus attuale</p>
         <ul class="about__card-list">
-          <li data-i18n="about.card1">Contenuti Brawl Stars </li>
+          <li data-i18n="about.card1">Contenuti Brawl Stars & Minecraft</li>
           <li data-i18n="about.card2">Integrazioni API (Supercell, YouTube)</li>
-          <li data-i18n="about.card3">Diventare content creator</li>
+          <li data-i18n="about.card3">Diventare Supercell Trusted Creator</li>
         </ul>
       </div>
     </div>
@@ -142,36 +139,35 @@
   <section id="stack" class="section container">
     <div class="section__head">
       <h2 data-i18n="stack.title">Stack & strumenti</h2>
-      <span class="section__index">02</span>
     </div>
     <p class="section__sub" data-i18n="stack.sub">Quello che uso davvero, ordinato per come lo uso io — non per hype.</p>
 
-    <div class="stack-grid" id="stackGrid">
+    <div class="stack-hotbar" id="stackGrid">
       <!-- popolata anche via JS, markup statico come fallback/no-js -->
-      <div class="stack-item" data-tag="frontend">
-        <span class="stack-item__glyph">&lt;/&gt;</span>
-        <span class="stack-item__name">HTML / CSS / JS</span>
-        <span class="stack-item__tag" data-i18n="stack.tag.frontend">frontend</span>
+      <div class="stack-slot" data-tag="frontend">
+        <span class="stack-slot__glyph">&lt;/&gt;</span>
+        <span class="stack-slot__name">HTML / CSS / JS</span>
       </div>
-      <div class="stack-item" data-tag="backend">
-        <span class="stack-item__glyph">$php</span>
-        <span class="stack-item__name">PHP</span>
-        <span class="stack-item__tag" data-i18n="stack.tag.backend">backend</span>
+      <div class="stack-slot" data-tag="backend">
+        <span class="stack-slot__glyph">$php</span>
+        <span class="stack-slot__name">PHP</span>
       </div>
-      <div class="stack-item" data-tag="sistema">
-        <span class="stack-item__glyph">~$</span>
-        <span class="stack-item__name">Linux</span>
-        <span class="stack-item__tag" data-i18n="stack.tag.sistema">sistema</span>
+      <div class="stack-slot" data-tag="api">
+        <span class="stack-slot__glyph">↔</span>
+        <span class="stack-slot__name">cURL / API</span>
       </div>
-      <div class="stack-item" data-tag="workflow">
-        <span class="stack-item__glyph">⎇</span>
-        <span class="stack-item__name">Git / GitHub</span>
-        <span class="stack-item__tag" data-i18n="stack.tag.workflow">versionamento</span>
+      <div class="stack-slot" data-tag="sistema">
+        <span class="stack-slot__glyph">~$</span>
+        <span class="stack-slot__name">Linux</span>
       </div>
-      <div class="stack-item" data-tag="editing">
-        <span class="stack-item__glyph">▶</span>
-        <span class="stack-item__name">CapCut</span>
-        <span class="stack-item__tag" data-i18n="stack.tag.editing">editing video</span>
+      <div class="stack-slot" data-tag="workflow">
+        <span class="stack-slot__glyph">⎇</span>
+        <span class="stack-slot__name">Git</span>
+      </div>
+      <div class="stack-slot" data-tag="editing">
+        <span class="stack-slot__glyph">▶</span>
+        <span class="stack-slot__name">CapCut</span>
+      </div>
     </div>
   </section>
 
@@ -179,54 +175,53 @@
   <section id="projects" class="section container">
     <div class="section__head">
       <h2 data-i18n="projects.title">Progetti</h2>
-      <span class="section__index">03</span>
     </div>
     <p class="section__sub" data-i18n="projects.sub">Progetti web costruiti attorno a dati veri, non mockup statici.</p>
 
-    <div class="projects-grid">
+    <div class="log-list">
 
-      <article class="project-card">
-        <div class="project-card__top">
-          <span class="project-card__label">Brawl Stars API</span>
-          <span class="project-card__status" data-i18n="projects.statusLive">live(WIP)</span>
-        </div>
-        <h3 data-i18n="projects.p1Title">Club & Player Tracker</h3>
-        <p data-i18n="projects.p1Text">
-          Web app che interroga l'API ufficiale Brawl Stars (via proxy PHP per non esporre la chiave)
-          e mostra trofei, brawler e statistiche del club in tempo reale.
-        </p>
-        <div class="project-card__tags">
-          <span>PHP</span><span>cURL</span><span>JSON</span>
+      <article class="log-row">
+        <span class="log-row__marker log-row__marker--pink" aria-hidden="true"></span>
+        <div class="log-row__body">
+          <div class="log-row__top">
+            <h3 data-i18n="projects.p1Title">Club & Player Tracker</h3>
+            <span class="log-row__status" data-i18n="projects.statusLiveclosed">live (closed)</span>
+          </div>
+          <p data-i18n="projects.p1Text">
+            Web app che interroga l'API ufficiale Brawl Stars (via proxy PHP per non esporre la chiave)
+            e mostra trofei, brawler e statistiche del club in tempo reale.
+          </p>
+          <p class="log-row__stack">Brawl Stars API, PHP, cURL, JSON</p>
         </div>
       </article>
 
-      <article class="project-card">
-        <div class="project-card__top">
-          <span class="project-card__label">YouTube Data API</span>
-          <span class="project-card__status" data-i18n="projects.statusLive">live(Beta)</span>
-        </div>
-        <h3 data-i18n="projects.p2Title">Contatore iscritti dinamico</h3>
-        <p data-i18n="projects.p2Text">
-          Widget che legge le statistiche pubbliche dei canali @BsQuik  e aggiorna
-          il contatore sul sito senza ricaricare la pagina.
-        </p>
-        <div class="project-card__tags">
-          <span>JavaScript</span><span>Fetch API</span><span>PHP</span>
+      <article class="log-row">
+        <span class="log-row__marker log-row__marker--gold" aria-hidden="true"></span>
+        <div class="log-row__body">
+          <div class="log-row__top">
+            <h3 data-i18n="projects.p2Title">Contatore iscritti dinamico</h3>
+            <span class="log-row__status" data-i18n="projects.statusLivebeta">live(beta)</span>
+          </div>
+          <p data-i18n="projects.p2Text">
+            Widget che legge le statistiche pubbliche dei canali @BsQuik e @Quikcommandboy e aggiorna
+            il contatore sul sito senza ricaricare la pagina.
+          </p>
+          <p class="log-row__stack">YouTube Data API, JavaScript, Fetch API, PHP</p>
         </div>
       </article>
 
-      <article class="project-card">
-        <div class="project-card__top">
-          <span class="project-card__label" data-i18n="projects.p3Label">Web app</span>
-          <span class="project-card__status" data-i18n="projects.statusProgress">in corso</span>
-        </div>
-        <h3 data-i18n="projects.p3Title">Questo sito</h3>
-        <p data-i18n="projects.p3Text">
-          Portfolio personale con minigiochi in Canvas/JS puro e un pannello segreto —
-          niente framework, solo HTML, CSS e JavaScript vanilla.
-        </p>
-        <div class="project-card__tags">
-          <span>Vanilla JS</span><span>CSS</span><span>Canvas</span>
+      <article class="log-row">
+        <span class="log-row__marker log-row__marker--green" aria-hidden="true"></span>
+        <div class="log-row__body">
+          <div class="log-row__top">
+            <h3 data-i18n="projects.p3Title">Questo sito</h3>
+            <span class="log-row__status" data-i18n="projects.statusProgress">in corso(live)</span>
+          </div>
+          <p data-i18n="projects.p3Text">
+            Portfolio personale con minigiochi in Canvas/JS puro e un pannello segreto —
+            HTML, CSS e JavaScript vanilla.
+          </p>
+          <p class="log-row__stack">Vanilla JS, CSS, Canvas</p>
         </div>
       </article>
 
@@ -237,7 +232,6 @@
   <section id="games" class="section container">
     <div class="section__head">
       <h2 data-i18n="games.title">Minigiochi</h2>
-      <span class="section__index">04</span>
     </div>
     <p class="section__sub" data-i18n="games.sub">Qualche pausa veloce mentre esplori il sito. Punteggi salvati solo in questo browser. Ce n'è anche uno nascosto, se sai dove cercare.</p>
 
@@ -270,6 +264,7 @@
         <div class="game-panel__stats">
           <div><span class="game-panel__stat-label" data-i18n="games.qz.question">Domanda</span><span id="qzIndex" class="game-panel__stat-value">0/10</span></div>
           <div><span class="game-panel__stat-label" data-i18n="games.gr.score">Punteggio</span><span id="qzScore" class="game-panel__stat-value">0</span></div>
+          <div><span class="game-panel__stat-label" data-i18n="games.gr.best">Record</span><span id="qzBest" class="game-panel__stat-value">0</span></div>
         </div>
         <div id="quizBody" class="quiz-body">
           <p class="quiz-intro" data-i18n="games.qz.intro">Premi "Avvia" per iniziare il quiz.</p>
@@ -325,29 +320,40 @@
   <section id="contact" class="section container">
     <div class="section__head">
       <h2 data-i18n="contact.title">Trovami altrove</h2>
-      <span class="section__index">05</span>
     </div>
 
-    <div class="social-grid">
-      <a class="social-card" href="https://www.youtube.com/@BsQuik" target="_blank" rel="noopener">
-        <span class="social-card__platform">YouTube</span>
-        <span class="social-card__handle">@BsQuik</span>
-        <span class="social-card__sub" id="ytSubsBsQuik" data-i18n="contact.bsquikSub">contenuti Brawl Stars</span>
+    <div class="link-list">
+      <a class="link-row" href="https://www.youtube.com/@BsQuik" target="_blank" rel="noopener">
+        <span class="link-row__main">
+          <span class="link-row__platform">YouTube</span>
+          <span class="link-row__handle">@BsQuik</span>
+        </span>
+        <span class="link-row__sub" id="ytSubsBsQuik" data-i18n="contact.bsquikSub">contenuti Brawl Stars</span>
+        <span class="link-row__arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="social-card" href="https://www.youtube.com/@Quikcommandboy" target="_blank" rel="noopener">
-        <span class="social-card__platform">YouTube</span>
-        <span class="social-card__handle">Quik the command one</span>
-        <span class="social-card__sub" id="ytSubsPizzaa" data-i18n="contact.pizzaaSub">contenuti Minecraft</span>
+      <a class="link-row" href="https://www.youtube.com/@Quikcommandboy" target="_blank" rel="noopener">
+        <span class="link-row__main">
+          <span class="link-row__platform">YouTube</span>
+          <span class="link-row__handle">Quik the command one</span>
+        </span>
+        <span class="link-row__sub" id="ytSubsPizzaa" data-i18n="contact.pizzaaSub">contenuti Minecraft</span>
+        <span class="link-row__arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="social-card" href="https://github.com/" target="_blank" rel="noopener">
-        <span class="social-card__platform">GitHub</span>
-        <span class="social-card__handle" data-i18n="contact.githubHandle">i miei repo</span>
-        <span class="social-card__sub" data-i18n="contact.githubSub">codice dei progetti</span>
+      <a class="link-row" href="https://github.com/org/BsQuik" target="_blank" rel="noopener">
+        <span class="link-row__main">
+          <span class="link-row__platform">GitHub</span>
+          <span class="link-row__handle" data-i18n="contact.githubHandle">i miei repo</span>
+        </span>
+        <span class="link-row__sub" data-i18n="contact.githubSub">codice dei progetti</span>
+        <span class="link-row__arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="social-card" href="mailto:contatto@example.com">
-        <span class="social-card__platform">Email</span>
-        <span class="social-card__handle" data-i18n="contact.emailHandle">Scrivimi</span>
-        <span class="social-card__sub" data-i18n="contact.emailSub">collaborazioni & domande</span>
+      <a class="link-row" href="mailto:contatto@example.com">
+        <span class="link-row__main">
+          <span class="link-row__platform">Email</span>
+          <span class="link-row__handle" data-i18n="contact.emailHandle">Scrivimi</span>
+        </span>
+        <span class="link-row__sub" data-i18n="contact.emailSub">collaborazioni & domande</span>
+        <span class="link-row__arrow" aria-hidden="true">↗</span>
       </a>
     </div>
   </section>
@@ -356,7 +362,7 @@
 
 <footer class="site-footer">
   <div class="container site-footer__inner">
-    <p><span data-i18n="footer.made">Fatto a mano, senza framework.</span> <span id="year"></span></p>
+    <p><span data-i18n="footer.made">Fatto a mano.</span> <span id="year"></span></p>
     <!-- Bottone discreto per il pannello segreto: nessuna icona vistosa, si nota solo se lo cerchi -->
     <button id="secretTrigger" class="secret-trigger" aria-label="?">·</button>
   </div>
