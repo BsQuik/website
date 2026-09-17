@@ -22,40 +22,41 @@
       'nav.games': 'Minigiochi',
       'nav.contact': 'Contatti',
 
-      'hero.eyebrow': 'creator · developer',
       'hero.lead': 'Faccio video su Brawl Stars, Clash Royale e Minecraft — e quando spengo la camera costruisco siti, bot e piccoli strumenti che vivono di API vere.',
       'hero.ctaProjects': 'Guarda i progetti',
       'hero.ctaGames': 'Gioca ora',
 
       'about.title': 'Chi sono',
-      'about.p1': 'Mi chiamo <strong>BsQuik</strong> (in giro anche come <strong>Quik</strong>). Creo contenuti gaming incentrati sull\'universo Supercell — soprattutto Brawl Stars — e su Minecraft: gameplay, build, sfide e tutto quello che rende un match raccontabile.',
-      'about.p2': 'In parallelo studio e costruisco progetti web: dashboard che parlano con API reali, piccole web app, automazioni. Mi interessa il punto dove gaming e codice si incontrano — contatori live, bot per server, strumenti che i creator come me userebbero davvero.',
+      'about.p1': 'Mi chiamo <strong>BsQuik</strong> (in giro anche come <strong>Quik the command one</strong>). Creo contenuti gaming incentrati sull\'universo Supercell — soprattutto Brawl Stars — e quando sono of camera gioco a Minecraft.',
+      'about.p2': 'In parallelo studio e costruisco progetti web: dashboard che usano API reali, piccole web app, automazioni. Mi interessa il punto dove gaming e codice si incontrano — contatori live, bot per server, strumenti che i creator come me userebbero davvero.',
       'about.cardLabel': 'Focus attuale',
       'about.card1': 'Contenuti Brawl Stars & Minecraft',
       'about.card2': 'Integrazioni API (Supercell, YouTube)',
-      'about.card3': 'Diventare a trusted content creator',
+      'about.card3': 'Diventare Supercell Trusted Creator',
 
       'stack.title': 'Stack & strumenti',
-      'stack.sub': 'Quello che uso davvero, ordinato per come lo uso io — non per hype.',
+      'stack.sub': 'Quello che uso nelle mie task',
       'stack.tag.frontend': 'frontend',
       'stack.tag.backend': 'backend',
       'stack.tag.api': 'integrazioni',
       'stack.tag.sistema': 'sistema',
       'stack.tag.workflow': 'versionamento',
       'stack.tag.editing': 'editing video',
-      'stack.tag.creative': 'tavoletta grafica',
+      
 
       'projects.title': 'Progetti',
-      'projects.sub': 'Progetti web costruiti attorno a dati veri, non mockup statici.',
+      'projects.sub': 'Progetti web.',
       'projects.statusLive': 'live',
+      'projects.statusLiveclosed': 'live (closed)',
+      'projects.statusLivebeta': 'live (beta)',
       'projects.statusProgress': 'in corso',
       'projects.p1Title': 'Club & Player Tracker',
       'projects.p1Text': 'Web app che interroga l\'API ufficiale Brawl Stars (via proxy PHP per non esporre la chiave) e mostra trofei, brawler e statistiche del club in tempo reale.',
       'projects.p2Title': 'Contatore iscritti dinamico',
-      'projects.p2Text': 'Widget che legge le statistiche pubbliche dei canali @BsQuik e @ttm|Pizzaa e aggiorna il contatore sul sito senza ricaricare la pagina.',
+      'projects.p2Text': 'Widget che legge le statistiche pubbliche dei canali @BsQuik e @Quikcommandboy e aggiorna il contatore sul sito senza ricaricare la pagina.',
       'projects.p3Label': 'Web app',
       'projects.p3Title': 'Questo sito',
-      'projects.p3Text': 'Portfolio personale con minigiochi in Canvas/JS puro e un pannello segreto — niente framework, solo HTML, CSS e JavaScript vanilla.',
+      'projects.p3Text': 'Portfolio personale con minigiochi in Canvas/JS puro e un pannello segreto — HTML, CSS e JavaScript vanilla.',
 
       'games.title': 'Minigiochi',
       'games.sub': 'Qualche pausa veloce mentre esplori il sito. Punteggi salvati solo in questo browser. Ce n\'è anche uno nascosto, se sai dove cercare.',
@@ -81,11 +82,14 @@
       'contact.emailHandle': 'Scrivimi',
       'contact.emailSub': 'collaborazioni & domande',
 
-      'footer.made': 'Fatto a mano, senza framework.',
+      'footer.made': 'Fatto a mano.',
 
       'modal.title': 'Accesso riservato',
       'modal.hint': 'Hai trovato il pannello nascosto. Serve una password.',
-      'modal.enter': 'Entra'
+      'modal.enter': 'Entra',
+
+      'theme.night': '🌙 Notte',
+      'theme.day': '☀ Giorno'
     },
 
     en: {
@@ -95,18 +99,17 @@
       'nav.games': 'Mini-games',
       'nav.contact': 'Contact',
 
-      'hero.eyebrow': 'creator · developer',
       'hero.lead': 'I make videos about Brawl Stars, Clash Royale and Minecraft — and when the camera\'s off I build sites, bots and small tools that run on real APIs.',
       'hero.ctaProjects': 'See the projects',
       'hero.ctaGames': 'Play now',
 
       'about.title': 'About me',
-      'about.p1': 'I\'m <strong>BsQuik</strong> (also known as <strong>ttm | Pizzaa</strong>). I create gaming content focused on the Supercell universe — mainly Brawl Stars — and on Minecraft: gameplay, builds, challenges, anything worth telling a story about.',
+      'about.p1': 'I\'m <strong>BsQuik</strong> (also known as <strong>Quik the command one</strong>). I create gaming content focused on the Supercell universe — mainly Brawl Stars — and when I am off camera, I play Minecraft.',
       'about.p2': 'Alongside that I study and build web projects: dashboards talking to real APIs, small web apps, automations. I like the spot where gaming and code meet — live counters, server bots, tools creators like me would actually use.',
       'about.cardLabel': 'Current focus',
       'about.card1': 'Brawl Stars & Minecraft content',
       'about.card2': 'API integrations (Supercell, YouTube)',
-      'about.card3': 'Lightweight web apps, no heavy frameworks',
+      'about.card3': 'Become a Supercell Trusted Creator',
 
       'stack.title': 'Stack & tools',
       'stack.sub': 'What I actually use, ranked by how much I use it — not by hype.',
@@ -116,7 +119,7 @@
       'stack.tag.sistema': 'system',
       'stack.tag.workflow': 'versioning',
       'stack.tag.editing': 'video editing',
-      'stack.tag.creative': 'graphics tablet',
+      
 
       'projects.title': 'Projects',
       'projects.sub': 'Web projects built around real data, not static mockups.',
@@ -125,10 +128,10 @@
       'projects.p1Title': 'Club & Player Tracker',
       'projects.p1Text': 'A web app that queries the official Brawl Stars API (through a PHP proxy so the key is never exposed) and shows trophies, brawlers and club stats in real time.',
       'projects.p2Title': 'Live subscriber counter',
-      'projects.p2Text': 'A widget that reads public stats from the @BsQuik and @ttm|Pizzaa channels and updates the counter on the site without reloading the page.',
+      'projects.p2Text': 'A widget that reads public stats from the @BsQuik and @Quikcommandboy channels and updates the counter on the site without reloading the page.',
       'projects.p3Label': 'Web app',
       'projects.p3Title': 'This website',
-      'projects.p3Text': 'Personal portfolio with mini-games in pure Canvas/JS and a secret panel — no frameworks, just vanilla HTML, CSS and JavaScript.',
+      'projects.p3Text': 'Personal portfolio with mini-games in pure Canvas/JS and a secret panel — HTML, CSS and JavaScript.',
 
       'games.title': 'Mini-games',
       'games.sub': 'A few quick breaks while you explore the site. Scores are saved only in this browser. There\'s a hidden one too, if you know where to look.',
@@ -154,11 +157,14 @@
       'contact.emailHandle': 'Get in touch',
       'contact.emailSub': 'collabs & questions',
 
-      'footer.made': 'Handmade, no frameworks.',
+      'footer.made': 'Handmade.',
 
       'modal.title': 'Restricted access',
       'modal.hint': 'You found the hidden panel. It needs a password.',
-      'modal.enter': 'Enter'
+      'modal.enter': 'Enter',
+
+      'theme.night': '🌙 Night',
+      'theme.day': '☀ Day'
     }
   };
 
@@ -170,6 +176,7 @@
       quizCompleted: 'Quiz completato.',
       quizReplay: 'Premi "Avvia" per rigiocare con le stesse domande.',
       wrongPassword: 'Password errata. Riprova.',
+      rateLimited: 'Troppi tentativi. Riprova tra {s}s.',
       unlockedBanner: 'Easter egg sbloccato: benvenuto nella modalità Hacker.',
       pageTitle: 'BsQuik — Gaming & Web Dev',
       metaDescription: 'Creatore di contenuti gaming (Brawl Stars, Minecraft) e sviluppatore web. Progetti, API, minigiochi.',
@@ -184,7 +191,7 @@
       minecraftToast: 'Achievement get: Blocco di Diamante 💎',
       brawlToast: 'Super attivata! ⭐',
       ggToast: 'GG! 🏆',
-      hiToast:'Ciao!' 
+      hiToast: 'Ciao! 😊',
     },
     en: {
       heroTyped: 'I play. I record. I build.',
@@ -192,6 +199,7 @@
       quizCompleted: 'Quiz completed.',
       quizReplay: 'Press "Start" to replay with the same questions.',
       wrongPassword: 'Wrong password. Try again.',
+      rateLimited: 'Too many attempts. Try again in {s}s.',
       unlockedBanner: 'Easter egg unlocked: welcome to Hacker mode.',
       pageTitle: 'BsQuik — Gaming & Web Dev',
       metaDescription: 'Gaming content creator (Brawl Stars, Minecraft) and web developer. Projects, APIs, mini-games.',
@@ -206,7 +214,7 @@
       minecraftToast: 'Achievement get: Diamond Block 💎',
       brawlToast: 'Super activated! ⭐',
       ggToast: 'GG! 🏆',
-      hiToast:'HI!' 
+      hiToast: 'Hi! 😊'
     }
   };
 
