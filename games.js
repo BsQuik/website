@@ -76,7 +76,7 @@
 
       ctx.save();
       ctx.globalAlpha = alpha;
-      ctx.fillStyle = '#A8D93A';
+      ctx.fillStyle = '#3FE6B0';
       ctx.strokeStyle = '#14111F';
       ctx.lineWidth = 3;
       ctx.beginPath();
@@ -334,6 +334,22 @@
   var quizBody = document.getElementById('quizBody');
   var qzIndexEl = document.getElementById('qzIndex');
   var qzScoreEl = document.getElementById('qzScore');
+  var qzBestEl = document.getElementById('qzBest');
+  var QZ_BEST_KEY = 'bsquik_quiz_best';
+
+  function qzLoadBest() {
+    var best = Number(localStorage.getItem(QZ_BEST_KEY) || 0);
+    if (qzBestEl) qzBestEl.textContent = String(best);
+    return best;
+  }
+
+  function qzSaveBestIfNeeded() {
+    var best = qzLoadBest();
+    if (qzState.score > best) {
+      localStorage.setItem(QZ_BEST_KEY, String(qzState.score));
+      qzLoadBest();
+    }
+  }
 
   function qzUpdateStats() {
     var total = getQuizQuestions().length;
@@ -404,6 +420,7 @@
   function qzRenderResult() {
     if (!quizBody) return;
     var total = getQuizQuestions().length;
+    qzSaveBestIfNeeded();
     var completedLabel = window.t ? window.t('quizCompleted') : 'Quiz completato.';
     var replayLabel = window.t ? window.t('quizReplay') : 'Premi "Avvia" per rigiocare con le stesse domande.';
 
@@ -416,7 +433,10 @@
     if (qzIndexEl) qzIndexEl.textContent = total + '/' + total;
   }
 
-  if (qzStartBtn) qzStartBtn.addEventListener('click', qzStart);
+  if (qzStartBtn) {
+    qzLoadBest();
+    qzStartBtn.addEventListener('click', qzStart);
+  }
 
   /* =========================================================
      MINIGIOCO 3 — BLOCK MATCH
