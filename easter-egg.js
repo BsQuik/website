@@ -48,7 +48,7 @@
   // Pioggia di piccoli blocchi (richiamo a Minecraft)
   function spawnBlockRain() {
     var overlay = getOverlay();
-    var colors = ['#A8D93A', '#8B5A2B', '#6B6B6B', '#4FD8E0'];
+    var colors = ['#3FE6B0', '#8B5A2B', '#6B6B6B', '#FFB627'];
     for (var i = 0; i < 18; i++) {
       (function () {
         var block = document.createElement('div');
@@ -67,7 +67,7 @@
   // Coriandoli colorati (richiamo a Brawl Stars: una "Super" attivata)
   function spawnConfetti() {
     var overlay = getOverlay();
-    var colors = ['#FF5A36', '#A8D93A', '#4FD8E0', '#F5C518', '#EDE9F5'];
+    var colors = ['#FF3D81', '#3FE6B0', '#FFB627', '#F2EEFB', '#8A5CFF'];
     for (var i = 0; i < 26; i++) {
       (function () {
         var piece = document.createElement('div');
@@ -84,10 +84,16 @@
   }
 
   /* =========================================================
-     1) PANNELLO SEGRETO PRINCIPALE (password -> tema Hacker)
+     1) PANNELLO SEGRETO PRINCIPALE (password -> pagina segreta)
+     La password NON viene mai ricordata: va reinserita ogni volta,
+     anche nella stessa sessione o alla stessa visita. Se corretta,
+     si viene portati su secret.html, che a sua volta richiede di
+     nuovo la password (vedi secret-gate.js) — così l'accesso resta
+     protetto anche visitando quella pagina direttamente o
+     ricaricandola.
      ========================================================= */
-  var SECRET_PASSWORD = 'brawlcode';     // <-- personalizza qui la password
-  var UNLOCK_KEY = 'bsquik_secret_unlocked';
+  var SECRET_PASSWORD = 'brawlcode';     // <-- personalizza qui la password (aggiorna anche secret-gate.js)
+  var SECRET_PAGE_URL = 'secret.html';
 
   var modal = document.getElementById('secretModal');
   var form = document.getElementById('secretForm');
@@ -95,12 +101,59 @@
   var errorEl = document.getElementById('secretError');
   var closeBtn = document.getElementById('secretClose');
   var triggerBtn = document.getElementById('secretTrigger');
+  var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+  /* ---------- Rate limiting sui tentativi ----------
+     Dopo RATE_MAX_ATTEMPTS tentativi sbagliati, il form si blocca per
+     RATE_LOCK_MS millisecondi (il tempo di blocco raddoppia ad ogni nuovo
+     blocco, per scoraggiare i tentativi ripetuti). Il contatore vive solo
+     in memoria: si azzera ricaricando la pagina, coerente con il fatto
+     che la password stessa non viene mai ricordata. */
+  var RATE_MAX_ATTEMPTS = 5;
+  var RATE_LOCK_MS = 15000;
+  var rateState = { attempts: 0, lockUntil: 0, lockMs: RATE_LOCK_MS, timer: null };
+
+  function rateFormat(ms) {
+    return Math.ceil(ms / 1000);
+  }
+
+  function rateSetLocked(remainingMs) {
+    if (submitBtn) submitBtn.disabled = true;
+    if (input) input.disabled = true;
+    clearInterval(rateState.timer);
+    rateState.timer = setInterval(function () {
+      var left = rateState.lockUntil - Date.now();
+      if (left <= 0) {
+        clearInterval(rateState.timer);
+        rateState.attempts = 0;
+        if (submitBtn) submitBtn.disabled = false;
+        if (input) input.disabled = false;
+        if (errorEl) errorEl.textContent = '';
+        return;
+      }
+      var tpl = window.t ? window.t('rateLimited') : 'Troppi tentativi. Riprova tra {s}s.';
+      if (errorEl) errorEl.textContent = tpl.replace('{s}', rateFormat(left));
+    }, 250);
+  }
+
+  function rateRegisterFailure() {
+    rateState.attempts++;
+    if (rateState.attempts >= RATE_MAX_ATTEMPTS) {
+      rateState.lockUntil = Date.now() + rateState.lockMs;
+      rateState.lockMs = Math.min(rateState.lockMs * 2, 120000); // raddoppia, max 2 minuti
+      rateSetLocked(rateState.lockMs);
+    }
+  }
+
+  function rateIsLocked() {
+    return Date.now() < rateState.lockUntil;
+  }
 
   function openModal() {
     if (!modal) return;
     modal.hidden = false;
-    if (errorEl) errorEl.textContent = '';
-    if (input) {
+    if (errorEl && !rateIsLocked()) errorEl.textContent = '';
+    if (input && !rateIsLocked()) {
       input.value = '';
       input.focus();
     }
@@ -112,10 +165,8 @@
   }
 
   function unlockEasterEgg() {
-    document.body.classList.add('theme-hacker');
-    localStorage.setItem(UNLOCK_KEY, '1');
     closeModal();
-    showToast(window.t ? window.t('unlockedBanner') : 'Easter egg sbloccato: benvenuto nella modalità Hacker.');
+    window.location.href = SECRET_PAGE_URL;
   }
 
   /* ---------- Apertura tramite bottone discreto ---------- */
@@ -136,13 +187,19 @@
   if (form) {
     form.addEventListener('submit', function (evt) {
       evt.preventDefault();
+      if (rateIsLocked()) return;
+
       var value = input ? input.value.trim() : '';
 
       if (value === SECRET_PASSWORD) {
+        rateState.attempts = 0;
         unlockEasterEgg();
       } else {
-        if (errorEl) errorEl.textContent = window.t ? window.t('wrongPassword') : 'Password errata. Riprova.';
-        if (input) {
+        rateRegisterFailure();
+        if (!rateIsLocked() && errorEl) {
+          errorEl.textContent = window.t ? window.t('wrongPassword') : 'Password errata. Riprova.';
+        }
+        if (input && !rateIsLocked()) {
           input.value = '';
           input.focus();
         }
@@ -174,11 +231,6 @@
       konamiProgress = (key === KONAMI_SEQUENCE[0]) ? 1 : 0;
     }
   });
-
-  /* ---------- Persistenza dello sblocco tra visite ---------- */
-  if (localStorage.getItem(UNLOCK_KEY) === '1') {
-    document.body.classList.add('theme-hacker');
-  }
 
   /* =========================================================
      2) EASTER EGG DEL LOGO -> sblocca il minigioco bonus
@@ -237,7 +289,7 @@
     { word: 'minecraft', run: function () { spawnBlockRain(); showToast(window.t ? window.t('minecraftToast') : 'Achievement get: Blocco di Diamante 💎'); } },
     { word: 'brawl', run: function () { spawnConfetti(); showToast(window.t ? window.t('brawlToast') : 'Super attivata! ⭐'); } },
     { word: 'gg', run: function () { showToast(window.t ? window.t('ggToast') : 'GG! 🏆'); } },
-    { word: 'hi', run: function () { showToast(window.t ? window.t('hiToast') : 'hi! 🏆'); } }
+    { word: 'hi', run: function () { showToast(window.t ? window.t('hiToast') : 'Ciao! 😊'); } }
   ];
   var typedBuffer = '';
   var TYPED_BUFFER_MAX = 20;
