@@ -131,12 +131,11 @@
     grid.innerHTML = '';
     STACK_ITEMS.forEach(function (item) {
       var div = document.createElement('div');
-      div.className = 'stack-item';
+      div.className = 'stack-slot';
       div.dataset.tag = item.tag;
       div.innerHTML =
-        '<span class="stack-item__glyph">' + item.glyph + '</span>' +
-        '<span class="stack-item__name">' + item.name + '</span>' +
-        '<span class="stack-item__tag">' + item.tag + '</span>';
+        '<span class="stack-slot__glyph">' + item.glyph + '</span>' +
+        '<span class="stack-slot__name">' + item.name + '</span>';
       grid.appendChild(div);
     });
   }
